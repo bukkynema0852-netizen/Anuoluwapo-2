@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Anu!</title>
+  <link rel="stylesheet" href="style.css">
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: white;
+
+      /* Purple dreamy background */
+      background:
+        linear-gradient(rgba(40, 0, 60, 0.7), rgba(90, 0, 120, 0.7)),
+        url("bg1.jpg") center/cover no-repeat fixed;
+
+      position: relative;
+    }
+
+    /* Blurred photo collage backdrop */
+    .photo-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .photo-backdrop img {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 25px;
+      opacity: 0.25;
+      filter: blur(1px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .img1 { top: 5%; left: 5%; transform: rotate(-10deg); }
+    .img2 { top: 15%; right: 8%; transform: rotate(8deg); }
+    .img3 { bottom: 10%; left: 12%; transform: rotate(12deg); }
+    .img4 { bottom: 5%; right: 10%; transform: rotate(-8deg); }
+
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+      max-width: 850px;
+      margin: auto;
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    .message {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      max-width: 700px;
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      margin-bottom: 30px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #d291ff, #ffffff);
+      color: #5b0078;
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .surprise-text {
+      margin-top: 35px;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .photo {
+      width: 280px;
+      max-width: 90%;
+      margin-top: 30px;
+      border-radius: 25px;
+      border: 5px solid rgba(255,255,255,0.5);
+      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Floating glow circles */
+    .glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: -2;
+      opacity: 0.4;
+    }
+
+    .glow1 {
+      width: 250px;
+      height: 250px;
+      background: #d291ff;
+      top: -50px;
+      left: -50px;
+    }
+
+    .glow2 {
+      width: 300px;
+      height: 300px;
+      background: #ffffff;
+      bottom: -80px;
+      right: -80px;
+    }
+
+  </style>
+</head>
+
+<body onclick="playMusic()">
+
+  <!-- Glowing background -->
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+
+  <div class="container">
+
+    <h1>Happy Birthday, Anuoluwapo!🎉</h1>
+
+    <p class="message">
+      Happy Birthday to my favourite housemate and one of the best friends I could ever ask for💜✨
+
+Thank you for all the random conversations, laughs, chaos, late-night moments and memories we’ve shared together.
+Living with you has honestly made life so much more fun and meaningful.
+
+I hope this new year of your life brings you happiness, success, peace, good health and everything your heart wishes for. 
+You deserve all the love and good things in the world🎂💫
+
+Stay amazing, annoying, funny and unapologetically you💕
+
+Love you always and thanks for making this hostel feel like home.
+
+    </p>
+
+    <button onclick="startSurprise()">
+      Click 
+    </button>
+
+    <div id="surprise" class="hidden">
+
+      <p class="surprise-text">
+        Ìyàlẹ́nu! 🎉🎂✨ <br><br>
+
+        Ìwọ̀yí ọdún tó ń bọ̀, Ọlọ́run yóò fún ẹ ní ọkọ rere, ọmọ aláyọ̀ àti iṣẹ́ aṣeyọrí 💜
+Ayọ̀, aláfíà àti ìbùkún kì yóò kúrò nínú ayé rẹ. Ẹ ku ọjọ́ ìbí 🎉🎂
+
+      </p>
+
+      <img src="photo.jpg" class="photo">
+
+      <p class="footer">
+        Made just for you by auntieeeeee💖
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- Music -->
+  <audio id="music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Play music when user clicks ANYWHERE
+    let musicStarted = false;
+
+    function playMusic() {
+      const music = document.getElementById("music");
+
+      if (!musicStarted) {
+        music.play();
+        musicStarted = true;
+      }
+    }
+
+    // Surprise button
+    function startSurprise() {
+      document.getElementById("surprise").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
